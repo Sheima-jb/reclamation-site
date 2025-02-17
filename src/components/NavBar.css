@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-direction: column; /* Aligne les boutons l'un sous l'autre */
+  justify-content: flex-start; /* Aligne les boutons en haut */
+  position: fixed; /* Fixe la barre de navigation sur la gauche */
+  left: 0; /* Positionne la barre de navigation à gauche */
+  top: 0; /* Positionne la barre de navigation en haut */
+  width: 150px; /* Largeur de la barre de navigation */
+  background-color: #f0f0f0; /* Couleur de fond */
+  padding: 10px;
+  height: 100%; /* Prend toute la hauteur de la page */
+}
+
+.navbar button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px; /* Espace entre les boutons */
+}
+
+.navbar button:hover {
+  background-color: #0056b3;
+}

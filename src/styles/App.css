@@ -1,0 +1,30 @@
+.task-board {
+    display: flex;
+    justify-content: space-around; /* Espace entre les colonnes */
+    padding: 20px;
+  }
+  
+  .column {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px; /* Ajustez la largeur des colonnes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre des colonnes */
+  }
+  
+  .column:hover {
+    transform: scale(1.02); /* Légère augmentation à l'effet de survol */
+  }
+  
+  .column h2 {
+    font-size: 1.5em; /* Taille de police pour le titre */
+    color: #333; /* Couleur du texte */
+  }
+  
+  .task {
+    background-color: #fff; /* Couleur de fond des tâches */
+    padding: 10px;
+    margin: 10px 0; /* Espace entre les tâches */
+    border-radius: 5px; /* Coins arrondis des tâches */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre des tâches */
+  }
