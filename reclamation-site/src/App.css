@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+}
+
+.navbar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  margin-left: 250px; /* Ajustement pour éviter que le contenu soit sous la NavBar */
+  width: calc(100% - 250px);
+  padding: 20px;
+}
