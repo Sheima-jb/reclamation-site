@@ -3,7 +3,6 @@ import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveCo
 import { FaRegCheckCircle, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
-
 const dataBar = [
   { name: "Nouvelle", value: 12 },
   { name: "En cours", value: 8 },
