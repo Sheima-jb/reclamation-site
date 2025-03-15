@@ -14,29 +14,44 @@ const AuthForm = () => {
     const [rib, setRib] = useState('');
     const [phone, setPhone] = useState('');
 
+    const handleLogout = () => {
+        localStorage.removeItem("userToken"); // Remove the user token or session
+        navigate("/AuthForm"); // Redirect to the AuthForm page
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (isSignUp) {
-            // Sauvegarde les informations dans localStorage (Simulation d'une base de données)
+            // Création d'un compte
             const newUser = { firstName, lastName, email, rib, phone, password };
-            localStorage.setItem(email, JSON.stringify(newUser));
+            localStorage.setItem(email, JSON.stringify(newUser)); // Sauvegarde par email
             alert('Compte créé avec succès ! Connectez-vous.');
             setIsSignUp(false);
         } else {
-            // Vérification de l'utilisateur
+            // Connexion
             const savedUser = localStorage.getItem(email);
             if (savedUser) {
                 const userData = JSON.parse(savedUser);
                 if (userData.password === password) {
-                    localStorage.setItem('loggedInUser', JSON.stringify(userData)); // Sauvegarde la session
-                    navigate('/UserProfile');
+                    localStorage.setItem('loggedInUser', JSON.stringify(userData)); // Stocke l'utilisateur connecté
+                    navigate('/UserProfile'); // Redirige vers UserProfile
                 } else {
                     alert('Mot de passe incorrect !');
                 }
             } else {
                 alert('Aucun compte trouvé avec cet email.');
             }
+        }
+    };
+
+    const handleForgotPassword = () => {
+        const savedUser = localStorage.getItem(email);
+        if (savedUser) {
+            alert(`Un lien de réinitialisation a été envoyé à ${email}`);
+            // Ici, vous pouvez intégrer l'envoi d'un email via un backend ou un service comme SendGrid.
+        } else {
+            alert("Aucun compte trouvé avec cet email.");
         }
     };
 
@@ -82,6 +97,14 @@ const AuthForm = () => {
                             {isSignUp ? 'Se connecter !' : 'Créer un compte !'}
                         </Link>
                     </Typography>
+
+                    {!isSignUp && (
+                        <Typography variant="body2" sx={{ mt: 1 }}>
+                            <Link onClick={handleForgotPassword} sx={{ cursor: 'pointer' }}>
+                                Mot de passe oublié ?
+                            </Link>
+                        </Typography>
+                    )}
                 </form>
             </Paper>
         </Box>

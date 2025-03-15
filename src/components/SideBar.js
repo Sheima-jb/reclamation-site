@@ -40,20 +40,20 @@ const SideBar = () => {
   ];
 
   return (
-<div className={`top-10 left-5 h-full min-h-screen bg-white text-gray-900 shadow-lg flex flex-col transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
-<div className="top_section flex justify-between items-center p-4 border-b">
-      <AnimatePresence>
-  {isOpen && (
-    <motion.div 
-      className="flex items-center space-x-2" 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }}
-    >
-      <h1 className="text-xl font-bold"></h1>
-    </motion.div>
-  )}
-</AnimatePresence>
+    <div className={`top-10 left-5 h-full min-h-screen bg-white text-gray-900 shadow-lg flex flex-col transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
+      <div className="top_section flex justify-between items-center p-4 border-b">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="flex items-center space-x-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <h1 className="text-xl font-bold"></h1>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
 
         <div className="cursor-pointer" onClick={toggle}>
@@ -70,7 +70,7 @@ const SideBar = () => {
           <FaArchive size={20} />
           {isOpen && <span className="ml-3">Archives</span>}
         </Link>
-        
+
         <div className="relative">
           <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} className="flex items-center p-3 w-full hover:bg-gray-200 rounded-lg">
             <FaCog size={20} />
@@ -88,7 +88,7 @@ const SideBar = () => {
             </div>
           )}
         </div>
-    
+
       </div>
 
       <div className="p-4 mt-auto">

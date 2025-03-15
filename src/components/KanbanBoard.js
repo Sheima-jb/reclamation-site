@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const initialTasks = {
   "Nouvelles": ["Réclamation 1", "Réclamation 2"],
-  "En Cours": ["Réclamation 3"],
-  "Terminées": ["Réclamation 4"],
+
 };
 
 const KanbanBoard = () => {
@@ -16,7 +15,7 @@ const KanbanBoard = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-50 to-gray-100 p-6">
       {/* Titre principal */}
-      <h1 className="text-4xl font-bold text-[#8B0000] mb-8">Tableau de Bord des Réclamations</h1>
+      <h1 className="text-4xl font-bold text-[#8B0000] mb-8"></h1>
 
       {/* Conteneur des cartes */}
       <div className="flex justify-between gap-6 w-full max-w-7xl mt-10 overflow-x-auto">
@@ -53,26 +52,7 @@ const KanbanBoard = () => {
                 <HiOutlinePlusCircle /> Déposer une réclamation
               </motion.button>
             )}
-            {index === 1 && (
-              <motion.button
-                className="mt-4 px-4 py-2 text-white bg-[#1E3A8A] rounded-lg hover:bg-[#1D4ED8] transition-all duration-300 ease-in-out"
-                onClick={() => navigate("/voir-reclamations")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Voir les réclamations en cours
-              </motion.button>
-            )}
-            {index === 2 && (
-              <motion.button
-                className="mt-4 px-4 py-2 text-white bg-[#065F46] rounded-lg hover:bg-[#047857] transition-all duration-300 ease-in-out"
-                onClick={() => navigate("/voir-reclamations-terminees")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Voir les réclamations terminées
-              </motion.button>
-            )}
+
           </motion.div>
         ))}
       </div>
